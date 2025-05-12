@@ -1,0 +1,112 @@
+/* Sort page specific styles */
+.sort-section {
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-lg);
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid var(--neutral-200);
+}
+
+.sort-controls {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.names-container {
+  max-height: 500px;
+  overflow-y: auto;
+  border: 2px solid var(--neutral-200);
+  border-radius: var(--border-radius);
+  background-color: var(--neutral-50);
+  box-shadow: var(--shadow-sm);
+}
+
+.names-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.names-list li {
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--neutral-200);
+  transition: var(--transition-normal);
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-large);
+  color: var(--neutral-700);
+  font-weight: 500;
+}
+
+.names-list li:last-child {
+  border-bottom: none;
+}
+
+.names-list li:hover {
+  background-color: var(--neutral-100);
+  transform: translateX(4px);
+  color: var(--primary);
+}
+
+/* Animation for sorting */
+@keyframes highlight {
+  0% {
+    background-color: var(--primary);
+    color: white;
+    transform: scale(1.02);
+  }
+  50% {
+    background-color: var(--primary-light);
+    color: white;
+    transform: scale(1.05);
+  }
+  100% {
+    background-color: transparent;
+    color: var(--neutral-800);
+    transform: scale(1);
+  }
+}
+
+.highlight {
+  animation: highlight 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom scrollbar */
+.names-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.names-container::-webkit-scrollbar-track {
+  background: var(--neutral-100);
+  border-radius: var(--border-radius);
+}
+
+.names-container::-webkit-scrollbar-thumb {
+  background: var(--neutral-300);
+  border-radius: var(--border-radius);
+  transition: var(--transition-normal);
+}
+
+.names-container::-webkit-scrollbar-thumb:hover {
+  background: var(--neutral-400);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sort-section {
+    padding: var(--space-4);
+  }
+  
+  .sort-controls {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  
+  .names-list li {
+    padding: var(--space-3);
+    font-size: var(--font-size-base);
+  }
+}
