@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NTWIST | Contact Form</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/form.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">
+        <h1>NTWIST</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Contact Form</a></li>
+          <li><a href="sort.html">Name Sorter</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <p>&copy; 2025 NTWIST</p>
+      </div>
+    </aside>
+    
+    <main>
+      <header>
+        <h2>Contact Form</h2>
+        <p>Please fill out the form below to get in touch with us.</p>
+      </header>
+
+      <section class="form-section">
+        <div class="form-timer">Time spent: <span id="timer">00:00:00</span></div>
+        
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required 
+              pattern="[A-Za-z ]{2,50}"
+              title="Name must be between 2 and 50 characters and contain only letters and spaces"
+            >
+            <span class="error-message"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required
+              title="Please enter a valid email address"
+            >
+            <span class="error-message"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              rows="5" 
+              required
+              minlength="10"
+              title="Please enter a message with at least 10 characters"
+            ></textarea>
+            <span class="error-message"></span>
+          </div>
+          
+          <div class="form-group rating-container">
+            <label>Rate your experience (Optional)</label>
+            <div class="star-rating" id="starRating">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+            <input type="hidden" id="ratingValue" name="rating" value="0">
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
+        <div id="confirmationMessage" class="confirmation-message hidden">
+          <div class="confirmation-content">
+            <h3>Thank you for your message!</h3>
+            <p>We've received your submission and will get back to you shortly.</p>
+            <p class="time-spent">You spent <span id="timeSpent"></span> filling out the form.</p>
+            <button id="newFormBtn" class="btn btn-secondary">Send Another Message</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/form.js"></script>
+</body>
+</html>
