@@ -58,7 +58,7 @@
 
 .form-group input:invalid,
 .form-group textarea:invalid {
-  border-color: var(--error);
+  border-color: rgb(162, 155, 155);
 }
 
 .form-group input:valid,
